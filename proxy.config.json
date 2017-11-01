@@ -1,6 +1,6 @@
 {
   "/api/coinSupply": {
-    "target": "http://127.0.0.1:6420",
+    "target": "http://127.0.0.1:7620",
     "pathRewrite": {
       "^/api/coinSupply" : "explorer/getEffectiveOutputs"
     },
@@ -8,7 +8,7 @@
     "logLevel": "debug"
   },
   "/api/outputs": {
-    "target": "http://127.0.0.1:6420",
+    "target": "http://127.0.0.1:7620",
     "pathRewrite": {
       "^/api/outputs" : "currentBalance"
     },
@@ -16,7 +16,7 @@
     "logLevel": "debug"
   },
   "/api/address": {
-    "target": "http://127.0.0.1:6420",
+    "target": "http://127.0.0.1:7620",
     "pathRewrite": {
       "^/api/address" : "explorer/address"
     },

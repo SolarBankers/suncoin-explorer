@@ -36,7 +36,7 @@ import (
 )
 
 const (
-	defaultExplorerHost = "127.0.0.1:8001"
+	defaultExplorerHost = "0.0.0.0:8001"
 	// defaultSkycoinAddr  = "http://127.0.0.1:6420"
 	defaultSkycoinAddr = "http://127.0.0.1:7620"
 
