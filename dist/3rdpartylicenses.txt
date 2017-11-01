@@ -67,7 +67,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
-moment@2.18.1
+moment@2.19.1
 MIT
 Copyright (c) JS Foundation and other contributors
 
@@ -92,7 +92,7 @@ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 
-@angular/core@4.4.4
+@angular/core@4.4.6
 MIT
 MIT
 
@@ -146,11 +146,11 @@ maintained libraries used by this software which have their own
 licenses; we recommend you read them, as their terms may differ from the
 terms above.
 
-@angular/router@4.4.4
+@angular/router@4.4.6
 MIT
 MIT
 
-@angular/http@4.4.4
+@angular/http@4.4.6
 MIT
 MIT
 
@@ -158,11 +158,11 @@ moment-es6@1.0.0
 MIT
 MIT
 
-@angular/platform-browser@4.4.4
+@angular/platform-browser@4.4.6
 MIT
 MIT
 
-@angular/common@4.4.4
+@angular/common@4.4.6
 MIT
 MIT
 

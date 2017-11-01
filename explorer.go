@@ -37,7 +37,8 @@ import (
 
 const (
 	defaultExplorerHost = "127.0.0.1:8001"
-	defaultSkycoinAddr  = "http://127.0.0.1:6420"
+	// defaultSkycoinAddr  = "http://127.0.0.1:6420"
+	defaultSkycoinAddr = "http://127.0.0.1:7620"
 
 	// timeout for requests to the backend skycoin node
 	skycoinRequestTimeout = time.Second * 30
@@ -579,7 +580,7 @@ func jsonDocs(w http.ResponseWriter, r *http.Request) {
 }
 
 const docTemplate string = `<html><head>
-<title>Skycoin Explorer API Documentation</title>
+<title>Suncoin Explorer API Documentation</title>
 <style type="text/css">
 code { white-space: pre; }
 pre { background: #F7FAFB; }
@@ -588,15 +589,12 @@ code.inline { border-radius: 3px; padding: 0.2em; background-color: #F7FAFB; fon
 </style>
 </head><body><div id="main">
 
-<h1>Skycoin Explorer API Documentation</h1>
+<h1>Suncoin Explorer API Documentation</h1>
 
 <div>
 <p>
-<p>The Skycoin Explorer API proxies a subset of a Skycoin node's API.</p>
+<p>The Suncoin Explorer API proxies a subset of a Suncoin node's API.</p>
 <p>All endpoints start with /api</p>
-<p>Further information about an endpoint can be found at the Skycoin repo.</p>
-<p>Skycoin Github:<a href="https://github.com/skycoin/skycoin">https://github.com/skycoin/skycoin</a>.</p>
-<p>Skycoin Explorer Github: <a href="https://github.com/skycoin/skycoin-explorer">https://github.com/skycoin/skycoin-explorer</a></p>
 </p>
 </div>
 
@@ -631,7 +629,7 @@ code.inline { border-radius: 3px; padding: 0.2em; background-color: #F7FAFB; fon
 {{ end }}
 
 {{ if .SkycoinPath }}
-<p>Internal skycoin node path:</p>
+<p>Internal suncoin node path:</p>
 <p class="example"><code class="inline">{{ .SkycoinPath }}</code></p>
 {{ end }}
 
