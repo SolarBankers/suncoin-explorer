@@ -32,6 +32,9 @@ npm-debug.log
 testem.log
 /typings
 
+#dist
+/dist
+
 # e2e
 /e2e/*.js
 /e2e/*.map
@@ -41,4 +44,4 @@ testem.log
 Thumbs.db
 
 # compiled binaries
-explorer
+/explorer.*

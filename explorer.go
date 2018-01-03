@@ -11,7 +11,7 @@ Environment options:
 * SKYCOIN_ADDR - The skycoin node's address. You must include a scheme. Defaults to http://127.0.0.1:6420
 
 CLI Options:
-* -api-only - Don't serve static content from ./dist, only proxy the skycoin node
+* -api-only - Don't erve static content from ./dist, only proxy the skycoin node
 
 Run the explorer and navigate to http://127.0.0.1:8001/api.html for API documentation.
 
@@ -37,8 +37,7 @@ import (
 
 const (
 	defaultExplorerHost = "0.0.0.0:8001"
-	// defaultSkycoinAddr  = "http://127.0.0.1:6420"
-	defaultSkycoinAddr = "http://127.0.0.1:7620"
+	defaultSkycoinAddr  = "http://127.0.0.1:7620"
 
 	// timeout for requests to the backend skycoin node
 	skycoinRequestTimeout = time.Second * 30
@@ -70,12 +69,12 @@ func init() {
 
 	origURL, err := url.Parse(skycoinAddrString)
 	if err != nil {
-		log.Println("SKYCOIN_ADDR must have a scheme, e.g. http://")
-		log.Fatalln("Invalid SKYCOIN_ADDR", skycoinAddrString, err)
+		log.Println("SUNCOIN_ADDR must have a scheme, e.g. http://")
+		log.Fatalln("Invalid SUNCOIN_ADDR", skycoinAddrString, err)
 	}
 
 	if origURL.Scheme == "" {
-		log.Fatalln("SKYCOIN_ADDR must have a scheme, e.g. http://")
+		log.Fatalln("SUNCOIN_ADDR must have a scheme, e.g. http://")
 	}
 
 	skycoinAddr = &url.URL{
@@ -133,7 +132,7 @@ func (s APIEndpoint) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 	skycoinURL := buildSkycoinURL(s.SkycoinPath, query)
 
-	log.Printf("Proxying request %s to skycoin node %s with timeout %v", r.URL.String(), skycoinURL, skycoinRequestTimeout)
+	log.Printf("Proxying request %s to suncoin node %s with timeout %v", r.URL.String(), skycoinURL, skycoinRequestTimeout)
 
 	c := &http.Client{
 		Timeout: skycoinRequestTimeout,
@@ -141,7 +140,7 @@ func (s APIEndpoint) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 	resp, err := c.Get(skycoinURL)
 	if err != nil {
-		msg := "Request to skycoin node failed"
+		msg := "Request to suncoin node failed"
 		log.Println("ERROR:", msg, skycoinURL)
 		http.Error(w, msg, http.StatusInternalServerError)
 		return
@@ -153,7 +152,7 @@ func (s APIEndpoint) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 
 	if n, err := io.Copy(w, resp.Body); err != nil {
-		msg := "Copying response from skycoin node to client failed"
+		msg := "Copying response from suncoin node to client failed"
 		if n != 0 {
 			msg += fmt.Sprintf(", after %d bytes were written", n)
 		}
@@ -595,6 +594,9 @@ code.inline { border-radius: 3px; padding: 0.2em; background-color: #F7FAFB; fon
 <p>
 <p>The Suncoin Explorer API proxies a subset of a Suncoin node's API.</p>
 <p>All endpoints start with /api</p>
+<p>Further information about an endpoint can be found at the Suncoin repo.</p>
+<p>Suncoin Github:<a href="https://github.com/skycoin/skycoin">https://github.com/skycoin/skycoin</a>.</p>
+<p>Suncoin Explorer Github: <a href="https://github.com/skycoin/skycoin-explorer">https://github.com/skycoin/skycoin-explorer</a></p>
 </p>
 </div>
 
@@ -717,7 +719,7 @@ func main() {
 		gzipHandle("/api.html", http.HandlerFunc(htmlDocs))
 	}
 
-	log.Printf("Running skycoin explorer on http://%s", explorerHost)
+	log.Printf("Running suncoin explorer on http://%s", explorerHost)
 
 	s := &http.Server{
 		Addr:         explorerHost,
